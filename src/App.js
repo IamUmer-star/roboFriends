@@ -1,7 +1,8 @@
 import React from "react";
 import CardList from "./cardList";
 import Scroll from './Scroll'
-import SearchBox from './SearchBox'
+import SearchBox from './SearchBox';
+import Addition  from "./mango";
 
 
 class  App extends React.Component{
@@ -38,6 +39,7 @@ class  App extends React.Component{
                 <Scroll>
                 <CardList robots={filterdRobots} ></CardList>
                 </Scroll>
+                <Addition a={85 } b ={87} ></Addition>
             </div>
         )
     }
