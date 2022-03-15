@@ -2,7 +2,9 @@ import React from "react";
 import CardList from "./cardList";
 import Scroll from './Scroll'
 import SearchBox from './SearchBox';
-import Addition  from "./mango";
+import CheckboxWithLabel from "./CheckboxWithLabel";
+import Counter from './Counter'
+import { Link } from "react-router-dom";
 
 
 class  App extends React.Component{
@@ -34,12 +36,17 @@ class  App extends React.Component{
         
         return (
             <div className="tc">
+                
                 <h1>roboFriends</h1>
                 <SearchBox onSearchChange={this.onSearchChange}></SearchBox>
                 <Scroll>
                 <CardList robots={filterdRobots} ></CardList>
                 </Scroll>
-                <Addition a={85 } b ={87} ></Addition>
+              <a href={'checkboxPage'}>tochekc box page</a>
+                            <a href={'counterpage'}>ToCounter page</a>
+
+            
+                
             </div>
         )
     }
