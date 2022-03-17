@@ -9,7 +9,7 @@ const CheckboxWithLabel = ({labelOn, labelOff}) => {
 
   return (
     <label>
-        <h1 className='tc'>small check box</h1>
+        
         <div className='tc'>
             
       <input type="checkbox" checked={isChecked} onChange={onChange} className='tc pl7'/>

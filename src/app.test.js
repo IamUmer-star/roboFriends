@@ -28,3 +28,9 @@ test('counter test',()=>{
     expect(appComponent.length).toBe(1)
     
 })
+test('counter-testing',()=>{
+    const wraper =shallow(<Counter></Counter>)
+  
+    const intitialState = wraper.find("[data-test='increment-diplay']")
+    expect(intitialState.text()).toBe("0")
+})
