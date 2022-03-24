@@ -44,6 +44,8 @@ class  App extends React.Component{
                 </Scroll>
               <a href={'checkboxPage'}>tochekc box page</a>
                             <a href={'counterpage'}>ToCounter page</a>
+                            <a href={'togglepage'}>To Toggle page</a>
+                            <a href={'tictakgame'}>toRicTakGame</a>
 
             
                 

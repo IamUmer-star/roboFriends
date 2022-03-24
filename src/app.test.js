@@ -34,3 +34,13 @@ test('counter-testing',()=>{
     const intitialState = wraper.find("[data-test='increment-diplay']")
     expect(intitialState.text()).toBe("0")
 })
+const clickFn = jest.fn();
+describe('MyComponent', () => {
+  it('button click should hide component', () => {
+    const component = shallow(<Counter onClick={clickFn} />);
+    const button =component
+      .find('#my-button')
+      expect(button.simulate('click')).toHaveBeenCalled()
+    
+  });
+});
