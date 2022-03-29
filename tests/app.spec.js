@@ -1,6 +1,9 @@
 const { test, expect } = require('@playwright/test');
 
 
+test.beforeEach(async ({ page }) => {
+    await page.goto('localhost:3000');
+  });
 
   test.describe('first test' , ()=>{
 
@@ -8,8 +11,8 @@ const { test, expect } = require('@playwright/test');
         await expect(page.locator('.test-driver')).toHaveText('roboFriends')
     })
 
-    test.skip('checking ', async ({page})=>{
-        await expect(page.locator('.')).toBe()
+    test('checking ', async ({page})=>{
+        await expect(page.locator('.test-driver')).toHaveText('roboFriends')
     })
 
   })
