@@ -21,6 +21,8 @@ jobs:
       run: npm test
     - name: Start the tests with playwrite 
       run: npx playwright test
+    - name: Starting the App
+      run: npm start
     - uses: actions/upload-artifact@v2
       if: always()
       with:
