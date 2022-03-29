@@ -1,54 +1,48 @@
-import React, { useState } from "react";
-import { TextInput } from "./inputsinput";
 
-export default function Formee() {
-    const handleChange = ()=>{
-        
-    }
-  
-  return (
-    <div>
+import React, { useReducer, useRef,useLayoutEffect, useEffect , useState } from "react";
+import {Button} from './buttonimartive.js'
+
+
+export const Count = ()=>{
+
+
+  const [count , dispatch  ] = useReducer((state,action)=>{
+    switch(action){
+      case 'add':
+        return state +1
+      case '-':
+         return state -1
+         case'cslog':
+         console.log(state)
+      default:
+        return state
     
-      <TextInput
-        type="password"
-        value={password}
-        onChange={handleChange}
-        id="password"
-        required
-        label="password"
-        isPassword
-        error={passwordLength} //Password lenght error
-      />
-      <TextInput
-        type="password"
-        value={passwordConfirmation}
-        onChange={handleChange}
-        id="passwordConfirmation"
-        required
-        label="Confirm password"
-        isPassword
-        error={errorPasswordMessage}
-      />
-      <button
-        type="submit"
-        name="action"
-        onClick={onSubmit}
-        disabled={!formState.email}
-      >
-        {loading ? `loading...` : `save`}
-      </button>
-      <p
-          style={{
-            color: '#E2AAA0',
-            display: !isPasswordValid(password)  ? 'none' : 'block',
-          }}
-        >
-          Password must have at least 15 characters, 1 lowercase character, 1 uppercase character, 1 number, 1 special character and Same password.
-        </p>
+    }
+  },0)
+  const inputref= useRef('dingdong');
+  const buttonRef = useRef(null)
 
-      {accountCreationSuccessful && !loading ? (
-        <p>You have succefully create and account 👏🏾</p>
-      ) : null}
+  const [ thvalue,setThVale] = useState(inputref)
+
+  const handelChange = ()=>{
+    console.log(inputref.current.value)
+    setThVale(inputref.current.value)
+  }
+  useLayoutEffect(()=>{
+    console.log("uselayouteffect")
+  },[]);
+  useEffect(()=>{
+    console.log( 'this is useEFFect hook')
+  },[])
+  return(
+    <div>
+      {count}
+      <h1>some tests {inputref.current.value}</h1>
+      <input onChange={handelChange} onClick={()=>{dispatch('cslog')}} ref={inputref}  ></input>
+      <button onClick={()=>{dispatch('add')}} >increase</button>
+      <button onClick={()=>{dispatch('-')}} >decrese</button>
+      <button>button feo parant</button>
+      <Button ref={buttonRef}></Button>
     </div>
-  );
+  ) 
 }

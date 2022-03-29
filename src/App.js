@@ -2,9 +2,6 @@ import React from "react";
 import CardList from "./cardList";
 import Scroll from './Scroll'
 import SearchBox from './SearchBox';
-import CheckboxWithLabel from "./CheckboxWithLabel";
-import Counter from './Counter'
-import { Link } from "react-router-dom";
 
 
 class  App extends React.Component{
@@ -37,7 +34,7 @@ class  App extends React.Component{
         return (
             <div className="tc">
                 
-                <h1>roboFriends</h1>
+                <h1 className="test-driver">roboFriends</h1>
                 <SearchBox onSearchChange={this.onSearchChange}></SearchBox>
                 <Scroll>
                 <CardList robots={filterdRobots} ></CardList>
