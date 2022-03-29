@@ -9,7 +9,7 @@ const Counter = ()=>{
     }
     return(
         <div className='tc br3 pa2' data-test='component-app'>
-            <button id ='my-button' onClick={onClicks} >CLick</button>
+            <button data-testid ='my-button' onClick={onClicks} >CLick</button>
             <p data-test='increment-diplay'>{count}</p>
 
         </div>

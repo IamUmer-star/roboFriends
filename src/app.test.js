@@ -4,6 +4,7 @@ import  EnzymeAdapter  from "enzyme-adapter-react-16";
 import Enzyme, { shallow }  from 'enzyme';
 import ReactDOM from "react-dom";
 import Counter from './Counter';
+import { render, fireEvent } from '@testing-library/react';
 
 
 Enzyme.configure({adapter:new EnzymeAdapter()})
@@ -34,13 +35,18 @@ test('counter-testing',()=>{
     const intitialState = wraper.find("[data-test='increment-diplay']")
     expect(intitialState.text()).toBe("0")
 })
-const clickFn = jest.fn();
+
 describe('MyComponent', () => {
+    const mockCallBack = jest.fn();
   it('button click should hide component', () => {
-    const component = shallow(<Counter onClick={clickFn} />);
-    const button =component
-      .find('#my-button')
-      expect(button.simulate('click')).toHaveBeenCalled()
-    
+    const closeRightSectionSpy = jest.fn();
+
+    const { getByTestId } = render(
+      <Counter onClick={closeRightSectionSpy} />
+    );
+  
+    fireEvent.click(getByTestId('my-button'));
+  
+    expect(closeRightSectionSpy).toHaveBeenCalled(closeRightSectionSpy());
   });
 });
