@@ -20,9 +20,7 @@ jobs:
     - name: Start the tests with jest 
       run: npm test
     - name: Start the tests with playwrite 
-      run: npx playwright test
-    - name: Starting the App
-      run: npm start
+      run: npm start && npx playwright test 
     - uses: actions/upload-artifact@v2
       if: always()
       with:
