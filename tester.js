@@ -40,8 +40,8 @@ async function startTesting(){
             console.error(error);
             return;
         }
-       console.log(stdout);
-    //    throw new Error("Exiting by marzi");
+        console.log("exiting by process.exit")
+        process.exit()
     });
 }
 
@@ -49,6 +49,7 @@ async function startTesting(){
     try{
         await startTesting()
     }catch(e){
+        console.log(e)
         // if(e instanceof GracefullyExit){
         //     // console.error(e);
         // }else {console.error(e)}
