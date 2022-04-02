@@ -20,7 +20,7 @@ jobs:
     - name: Start the tests with jest 
       run: npm test
     - name: Split the teminal and start app
-      run: tmux new -s secterminal; npm start;
+      run: tmux new-session -s -d; npm start;
            \; \split-window -h -l 60 sleep 30 && npx playwright test \; 
            \select-layout even-horizontal
     - uses: actions/upload-artifact@v2
